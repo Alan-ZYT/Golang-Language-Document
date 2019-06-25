@@ -13,8 +13,9 @@ func main() {
 	*/
 
 	var a func()
-	a = fun1 //a 也是函数类型
-	a()      // fun1()......
+	a = fun1 // a 是函数类型
+	fmt.Printf("a is type:%T\n", a) //a is type:func()
+	a()      // fun1()...
 
 	arr1 := fun2()
 	fmt.Printf("arr1的类型：%T，地址：%p，数值：%v\n", arr1, &arr1, arr1) //arr1的类型：[4]int，地址：0xc000056140，数值：[1 2 3 4]
