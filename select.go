@@ -30,6 +30,18 @@ select 使用注意事项：
 	5. default 在所有case均不满足时，默认执行的分组，为防止忙轮询，通常将 for 里 select中的 default 省略。
 
 	【重要结论】：使用 select的 go程，与其他go程间 采用  【异步通信】 通信方式。
+	
+	
+select 实现的 超时：
+
+	1. select {
+	         case ch<-:
+	         case <-time.After(时间) ：
+	    } 
+
+	2.  当 select 监听的 ch 写事件满足时。会重置 time.After 的定时器时间。
+
+	3.  只有 select 监听的所有case均不满足，time.After 计时满 ，该 case 才满足监听条件（读事件）。
 
 */
 
