@@ -13,9 +13,8 @@ package main
 	        }
 
 	执行流程：
-		1.如果有多个都可以执行，select会随机执行一个可运行的case。
-		2.如果没有case可运行，如果有default，执行default，如果没有default，
-			它将阻塞，直到有case可运行。
+		1.如果有多个 case 都可以执行，select 会随机执行一个可运行的 case。
+		2.如果没有 case 可运行，如果有 default，执行 default，如果没有 default，它将阻塞，直到有 case 可运行。
 
 
 select 使用注意事项：
@@ -55,11 +54,11 @@ func main01() {
 
 	select {
 	case data := <-ch1:
-		fmt.Println("ch1中读取数据了:", data)
+		fmt.Println("ch1中读取到数据:", data)
 	case data := <-ch2:
-		fmt.Println("ch2中读取数据了：", data)
+		fmt.Println("ch2中读取到数据：", data)
 	default:
-		fmt.Println("执行了default。。。")
+		fmt.Println("执行了default...")
 	}
 }
 
@@ -144,14 +143,14 @@ out:
 		select {
 		case data, ok := <-ch1:
 			if !ok {
-				fmt.Println("通道关闭了。。")
+				fmt.Println("通道关闭了...")
 				break out
 			}
 			fmt.Println("ch1中读取数据：", data)
 		case data := <-ch2:
 			fmt.Println("ch2中读取数据：", data)
 		case <-time.After(2 * time.Second):
-			fmt.Println("超时2s。。。。")
+			fmt.Println("超时2s...")
 			count++
 			if count == 5 {
 				break out
