@@ -55,7 +55,7 @@ func main() {
 	//fmt.Println(res)
 
 	//定义一个函数指针类型
-	var p FUNCP
+	var p FUNCP //相当于 var a int
 
 	p = addOne
 	fmt.Printf("Type=%T\tSize=%d\n", p, unsafe.Sizeof(p))
