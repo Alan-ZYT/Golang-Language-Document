@@ -1,5 +1,12 @@
 package main
 
+/*
+浏览器url： http://127.0.0.1:8088/getuser/alan
+屏幕输出： 
+	   获得到用户名： alan
+           获得请求方式： GET
+*/
+
 import (
 	"fmt"
 	"github.com/julienschmidt/httprouter"
