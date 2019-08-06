@@ -17,6 +17,11 @@ panic error使用场景：
 	defer+panic+recover
 	Type Assertion
 	函数式编程的灵活应用
+	
+http服务器的性能分析
+	import _ "net/http/pprof"
+	访问 /debug/pprof example：http://127.0.0.1:8888/debug/pprof/
+	使用 go tool pprof 分析性能
 */
 
 package main
