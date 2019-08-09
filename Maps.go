@@ -97,5 +97,19 @@ func main() {
 	delete(m1, "name")
 	name, ok = m1["name"]
 	fmt.Println(name, ok)
-
+	
 }
+
+// 交换Map的键和值
+func main1() {
+	m1 := map[int]string{1: "a", 2: "b", 3: "c", 4: "d", 5: "e"}
+	m2 := make(map[string]int)
+	for k, v := range m1 {
+		m2[v] = k
+	}
+	fmt.Println("map1", m1)
+	fmt.Println("map2", m2)
+	fmt.Printf("map1 %T\n", m1)
+	fmt.Printf("map2 %T\n", m2)
+}
+
