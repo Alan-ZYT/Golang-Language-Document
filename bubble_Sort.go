@@ -22,7 +22,7 @@ package main
 import "fmt"
 
 var s = []int{1, 2, 3, 6, 5, 4, 8, 7, 9, 11, 2, 3, 4, 45, 6, 78, 9, 0, 1314, 3322, 4, 5667, 899654, 456789, 544}
-
+// 方法1
 func main() {
 	for i := 0; i < len(s); i++ {
 		for j := 0; j < i; j++ {
@@ -30,10 +30,27 @@ func main() {
 				s[i], s[j] = s[j], s[i]
 			}
 		}
-		// do
 	}
 
 	for _, v := range s {
 		fmt.Println(v)
 	}
+
+
+// 方法1
+	// 未排序数组
+	sort := [...]int{1, 2, 3, 6, 5, 4, 8, 7, 9, 11, 2, 3, 4, 45, 6, 78, 9, 0, 1314, 3322, 4, 5667, 899654, 456789, 544}
+	fmt.Println(sort)
+	// 优化性能
+	num := len(sort) 
+	// 冒泡排序，由大到小
+	for i := 0; i < num; i++ {
+		for j := i + 1; j < num; j++ {
+			if sort[i] < sort[j] {
+				sort[i], sort[j] = sort[j], sort[i]
+			}
+		}
+	}
+	fmt.Println(sort)
 }
+
